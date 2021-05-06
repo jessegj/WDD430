@@ -1,33 +1,41 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <div class="container">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="panel-body"><h2>Contact
-    <button class="btn btn-success">New Contact</button></h2>
-    <hr>
+    <div class="panel panel-default">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel panel-heading">
+              <div class="row">
+                <span class="title pad-left-right">Contacts</span>
+              </div>
+              <div class="row">
+                <button class="btn btn-success">New Contact</button>
+              </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-xs-12">
+              </div>
+                    <a href="#" class="list-group-item clearfix"
+                    *ngFor="let contactList of contact">
+                      <div class="pull-left">
+                        <h4 class="list-group-item-heading">{{ contactList.id }}</h4>
+                        <p class="list-group-item-text">{{ contactList.name }}</p>
+                        <p class="list-group-item">{{ contactList.email}}</p>
+                        <p class="list-group-item">{{ contactList.phone}}</p>
+                        <p class="list-group-item">{{ contactList.group}}</p>
+                      </div>
+                    <span class="pull-right">
+                      <img src="{{ contactList.imageUrl }}" alt="{{ contactList.name }}" class="img-responsive" style="max-height: 50px;">
+                    </span>
+                    </a>
+                    <app-contact-detail></app-contact-detail>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <a href="#" class="list-group-item clearfix"
-    *ngFor="let contactList of contact">
-      <div class="pull-left">
-        <h4 class="list-group-item-heading">{{ contactList.id }}</h4>
-        <p class="list-group-item-text">{{ contactList.name }}</p>
-        <p class="list-group-item">{{ contactList.email}}</p>
-        <p class="list-group-item">{{ contactList.phone}}</p>
-        <p class="list-group-item">{{ contactList.group}}</p>
-      </div>
-    <span class="pull-right">
-      <img src="{{ contactList.imageUrl }}" alt="{{ contactList.name }}" class="img-responsive" style="max-height: 50px;">
-    </span>
-    </a>
-    <app-contact-list></app-contact-list>
-  </div>
-</div>
