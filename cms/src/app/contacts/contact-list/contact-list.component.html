@@ -16,18 +16,18 @@
               <div class="row">
                 <div class="col-xs-12">
               </div><a href="#" class="list-group-item clearfix"
-              *ngFor="let contactList of contact"><app-contact-item></app-contact-item> </a>
+              *ngFor="let contacts of contact"><app-contact-item></app-contact-item> </a>
                     <a href="#" class="list-group-item clearfix"
-                    *ngFor="let contactList of contact">
+                    *ngFor="let contacts of contact">
                       <div class="pull-left">
-                        <h4 class="list-group-item-heading">{{ contactList.id }}</h4>
-                        <p class="list-group-item-text">{{ contactList.name }}</p>
-                        <!-- <p class="list-group-item">{{ contactList.email}}</p>
-                        <p class="list-group-item">{{ contactList.phone}}</p>
-                        <p class="list-group-item">{{ contactList.group}}</p> -->
+                        <h4 class="list-group-item-heading">{{ contacts.id }}</h4>
+                        <p class="list-group-item-text">{{ contacts.name }}</p>
+                        <!-- <p class="list-group-item">{{ contacts.email}}</p>
+                        <p class="list-group-item">{{ contacts.phone}}</p>
+                        <p class="list-group-item">{{ contacts.group}}</p> -->
                       </div>
                     <span class="pull-right">
-                      <img src="{{ contactList.imageUrl }}" alt="{{ contactList.name }}" class="img-responsive" style="max-height: 50px;">
+                      <img src="{{ contacts.imageUrl }}" alt="{{ contacts.name }}" class="img-responsive" style="max-height: 50px;">
                     </span>
                     </a>
                     <app-contact-detail></app-contact-detail>
