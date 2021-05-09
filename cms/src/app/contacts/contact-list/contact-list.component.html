@@ -15,7 +15,7 @@
             <div class="panel-body">
               <div class="row">
                 <div class="col-xs-12">
-              </div><app-contact-item (selectedContactEvent)="onSelected(contact)"></app-contact-item>
+              </div><app-contact-item (selectedContactEvent)="onSelected = $event"></app-contact-item>
                     <a href="#" class="list-group-item clearfix"
                     *ngFor="let contacts of contact">
                       <div class="pull-left">
