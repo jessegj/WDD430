@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Contact } from '../contact.model';
+import { ContactModel } from '../contact.model';
 
 @Component({
   selector: 'app-contact-item',
@@ -8,9 +8,9 @@ import { Contact } from '../contact.model';
 })
 export class ContactItemComponent implements OnInit {
 
-  contact: Contact[] = [
-    new Contact('1', 'R. Kent Jackson',/* 'jacksonk@byui.edu', '208-496-3771',*/ '../images/LarsPedersen.JPG'),//, 'NULL'),
-    new Contact('2', 'Rex Barzee',/* 'barzeer@byui.edu', '208-496-3768',*/ '../images/AndersPedersen.JPG')//, 'NULL')
+  contact: ContactModel[] = [
+    new ContactModel('1', 'R. Kent Jackson',/* 'jacksonk@byui.edu', '208-496-3771',*/ '../images/LarsPedersen.JPG'),//, 'NULL'),
+    new ContactModel('2', 'Rex Barzee',/* 'barzeer@byui.edu', '208-496-3768',*/ '../images/AndersPedersen.JPG')//, 'NULL')
   ];
 
   constructor() { }
