@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-
 import { ContactModel } from '../contact.model';
 
 @Component({
@@ -8,7 +7,8 @@ import { ContactModel } from '../contact.model';
   styleUrls: ['./contact-list.component.css']
 })
 export class ContactListComponent implements OnInit {
-@Output() selectedContactEvent = new EventEmitter<any>();
+
+@Output() selectedContactEvent = new EventEmitter<ContactModel>();
 
 onSelected(contact:ContactModel) {
   this.selectedContactEvent.emit(contact);
@@ -16,8 +16,8 @@ onSelected(contact:ContactModel) {
 
 
   contact: ContactModel[] = [
-    new ContactModel('1', 'R. Kent Jackson',/* 'jacksonk@byui.edu', '208-496-3771',*/ 'asset/images/LarsPedersen.JPG'),//, 'NULL'),
-    new ContactModel('2', 'Rex Barzee',/* 'barzeer@byui.edu', '208-496-3768',*/ 'asset/images/AndersPedersen.JPG')//, 'NULL')
+    new ContactModel('1', 'R. Kent Jackson',/* 'jacksonk@byui.edu', '208-496-3771',*/ 'assets/images/LarsPedersen.JPG'),//, 'NULL'),
+    new ContactModel('2', 'Rex Barzee',/* 'barzeer@byui.edu', '208-496-3768',*/ 'assets/images/AndersPedersen.JPG')//, 'NULL')
   ];
 
   constructor() { }

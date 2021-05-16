@@ -1,4 +1,4 @@
-export class Document {
+export class DocumentModel {
 
   public id: string;
   public name: string;
