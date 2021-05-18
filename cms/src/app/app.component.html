@@ -6,5 +6,10 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<app-header></app-header>
-<app-contacts></app-contacts>
+<app-header (selectedFeatureEvent)="switchView($event)"></app-header>
+<div class="container pull-left">
+  <app-documents *ngIf="selectedFeature ==='documents'"></app-documents>
+  <app-message-list *ngIf="selectedFeature ==='messages'"></app-message-list>
+  <app-contacts *ngIf="selectedFeature ==='contacts'"></app-contacts>
+</div>
+
