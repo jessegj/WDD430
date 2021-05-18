@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Message } from '../message.model'
 
 @Component({
   selector: 'app-message-list',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./message-list.component.css']
 })
 export class MessageListComponent implements OnInit {
+  messages: Message[] = [
+    new Message('2', 'Angular', 'Need some help?', 'Jim McJimmers')
+  ]
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+  onAddMessage(message: Message) {
+    this.messages.push(message);
   }
 
 }
