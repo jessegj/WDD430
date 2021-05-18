@@ -16,13 +16,12 @@ export class DocumentListComponent implements OnInit {
 
   ]
 
-  onSelectedDocument(document:DocumentModel) {
-    this.selectedDocumentEvent.emit(document);
-  }
-
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onSelectedDocument(document:DocumentModel) {
+    this.selectedDocumentEvent.emit(document);
+  }
 }

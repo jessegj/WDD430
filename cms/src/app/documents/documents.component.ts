@@ -8,7 +8,7 @@ import { DocumentModel } from './document.model';
 })
 export class DocumentsComponent implements OnInit {
 
-  selectedDocument:DocumentModel | undefined;
+  selectedDocument:DocumentModel;
 
   constructor() { }
 
