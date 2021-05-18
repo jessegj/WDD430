@@ -9,11 +9,18 @@ import { ContactModel } from './contact.model';
 })
 export class ContactsComponent implements OnInit {
 
-  contact: ContactModel[] = [];
+  contacts: ContactModel[] = [];
+
+  selectedContact?: ContactModel;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelected(contact: ContactModel) {
+    this.selectedContact = contact;
+    //console.log(this.selectedContact);
   }
 
 }

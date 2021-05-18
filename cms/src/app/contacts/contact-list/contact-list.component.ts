@@ -15,7 +15,7 @@ onSelected(contact:ContactModel) {
 }
 
 
-  contact: ContactModel[] = [
+  contacts: ContactModel[] = [
     new ContactModel('1', 'R. Kent Jackson', 'jacksonk@byui.edu', '208-496-3771', 'assets/images/LarsPedersen.JPG', 'NULL'),
     new ContactModel('2', 'Rex Barzee', 'barzeer@byui.edu', '208-496-3768', 'assets/images/AndersPedersen.JPG', 'NULL')
   ];

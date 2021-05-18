@@ -10,7 +10,7 @@ export class DocumentListComponent implements OnInit {
 
   @Output() selectedDocumentEvent = new EventEmitter<DocumentModel>();
 
-  document: DocumentModel[] = [
+  documents: DocumentModel[] = [
 
   new DocumentModel('1', 'Bob', 'Description', 'A Website', 'children')
 

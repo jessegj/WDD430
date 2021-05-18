@@ -8,19 +8,12 @@ import { ContactModel } from '../contact.model';
 })
 export class ContactItemComponent implements OnInit {
 
-  @Input() contact: ContactModel | undefined;
-  //= [
-  //   new ContactModel('1', 'R. Kent Jackson',/* 'jacksonk@byui.edu', '208-496-3771',*/ '../images/LarsPedersen.JPG'),//, 'NULL'),
-  //   new ContactModel('2', 'Rex Barzee',/* 'barzeer@byui.edu', '208-496-3768',*/ '../images/AndersPedersen.JPG')//, 'NULL')
-  // ];
+  @Input() contact: ContactModel;
+
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  onSelected() {
-
   }
 
 }
