@@ -6,7 +6,7 @@ export class ContactModel{
     public email: string,
     public phone: string,
     public imageUrl: string,
-    public group:ContactModel[]
+    public group:ContactModel[] | null
   ){}
 }
 
