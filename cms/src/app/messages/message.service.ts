@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Message } from './message.model';
 import { MOCKMESSAGES } from './MOCKMESSAGES';
 
 @Injectable({
@@ -17,7 +18,7 @@ export class MessageService {
 
   getMessage(id: string): Message | null {
     for (let message of this.messages) {
-      if (mesage.id == id) {
+      if (message.id == id) {
         return message;
       }
     }
