@@ -8,7 +8,6 @@ import { ContactService } from '../contact.service';
   styleUrls: ['./contact-list.component.css'],
 })
 export class ContactListComponent implements OnInit {
-
   onSelected(contact: ContactModel) {
     this.service.contactSelectedEvent.emit(contact);
   }
@@ -16,6 +15,6 @@ export class ContactListComponent implements OnInit {
   constructor(private service: ContactService) {}
 
   ngOnInit(): void {
-      this.contacts = this.service.getContacts();
+    this.contacts = this.service.getContacts();
   }
 }
