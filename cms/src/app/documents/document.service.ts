@@ -6,20 +6,20 @@ import { MOCKDOCUMENTS } from './MOCKDOCUMENTS';
   providedIn: 'root',
 })
 export class DocumentService {
-  documents: DocumentModel[] = [];
+  documentsService: DocumentModel[] = [];
 
   documentSelectedEvent = new EventEmitter<DocumentModel>();
 
   constructor() {
-    this.documents = MOCKDOCUMENTS;
+    this.documentsService = MOCKDOCUMENTS;
   }
 
   getDocuments() {
-    return this.documents;
+    return this.documentsService;
   }
 
   getDocument(id: string) {
-    for (let document of this.documents) {
+    for (let document of this.documentsService) {
       if (document.id == id) {
         return document;
       }
