@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DocumentModel } from '../document.model';
 import { DocumentService } from '../document.service';
 
+
 @Component({
   selector: 'app-document-list',
   templateUrl: './document-list.component.html',
@@ -14,5 +15,9 @@ export class DocumentListComponent implements OnInit {
 
   ngOnInit(): void {
     this.documents = this.document.getDocuments();
+
+    this.document.documentChangedEvent.subscribe((documents: DocumentModel[]) => {
+      this.documents = documents;
+    })
   }
 }

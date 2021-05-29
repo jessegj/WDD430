@@ -6,24 +6,37 @@ import { MOCKDOCUMENTS } from './MOCKDOCUMENTS';
   providedIn: 'root',
 })
 export class DocumentService {
-  documentsService: DocumentModel[] = [];
+  documents: DocumentModel[] = [];
 
   documentSelectedEvent = new EventEmitter<DocumentModel>();
 
+  documentChangedEvent = new EventEmitter<DocumentModel[]>();
+
   constructor() {
-    this.documentsService = MOCKDOCUMENTS;
+    this.documents = MOCKDOCUMENTS;
   }
 
   getDocuments() {
-    return this.documentsService;
+    return this.documents;
   }
 
   getDocument(id: string) {
-    for (let document of this.documentsService) {
+    for (let document of this.documents) {
       if (document.id == id) {
         return document;
       }
     }
     return null;
+  }
+  deleteDocument(document: DocumentModel){
+    if (!document){
+      return;
+    }
+    const pos = this.documents.indexOf(document);
+    if (pos< 0) {
+      return;
+    }
+    this.documents.splice(pos, 1);
+    this.documentChangedEvent.emit(this.documents.slice());
   }
 }
