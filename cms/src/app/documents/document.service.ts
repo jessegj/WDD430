@@ -28,12 +28,12 @@ export class DocumentService {
     }
     return null;
   }
-  deleteDocument(document: DocumentModel){
-    if (!document){
+  deleteDocument(document: DocumentModel) {
+    if (!document) {
       return;
     }
     const pos = this.documents.indexOf(document);
-    if (pos< 0) {
+    if (pos < 0) {
       return;
     }
     this.documents.splice(pos, 1);

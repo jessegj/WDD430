@@ -9,12 +9,15 @@ import { ContactService } from '../contact.service';
 })
 export class ContactListComponent implements OnInit {
   onSelected(contact: ContactModel) {
-    this.service.contactSelectedEvent.emit(contact);
+    this.contactService.contactSelectedEvent.emit(contact);
   }
   contacts: ContactModel[] = [];
-  constructor(private service: ContactService) {}
+  constructor(private contactService: ContactService) {}
 
   ngOnInit(): void {
-    this.contacts = this.service.getContacts();
+    this.contacts = this.contactService.getContacts();
+    this.contactService.contactChangedEvent.subscribe((contacts: ContactModel[]) => {
+      this.contacts = contacts;
+    });
   }
 }
