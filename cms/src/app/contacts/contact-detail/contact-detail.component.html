@@ -2,21 +2,21 @@
   <div class="panel-heading">
     <div class="row">
       <div class="col-xs-12">
-        <h2 class="title">{{ contact.name }}</h2>
-        <img src="{{ contact.imageUrl }}" alt="{{ contact.name }}" class="img-responsive">
+        <h2 class="title">{{ contact?.name }}</h2>
+        <img src="{{ contact?.imageUrl }}" alt="{{ contact?.name }}" class="img-responsive">
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
         <div class="pull-right">
-          <a class="btn btn-primary">Edit</a>
+          <a class="btn btn-primary" [routerLink]="['edit']">Edit</a>
           <a class="btn btn-danger">Delete</a>
         </div>
       </div>
       <div class="panel-body">
         <div class="col-xs-12 panel-body">
-          <p>Phone: {{ contact.phone }}</p>
-          <p>Email: {{ contact.email }}</p>
+          <p>Phone: {{ contact?.phone }}</p>
+          <p>Email: {{ contact?.email }}</p>
         </div>
       </div>
     </div>

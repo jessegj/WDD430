@@ -1,6 +1,8 @@
-  <div class="pull-left">
-    <p class="list-group-item-text">{{ contact.name }}</p>
-  </div>
-  <div class="pull-right">
-    <img src="{{ contact.imageUrl }}" alt="{{ contact.name }}" class="img-responsive" style="max-height: 50px;">
-  </div>
+  <a routerLinkActive="active" [routerLink]="contact.id">
+    <div class="pull-left">
+      <div class="list-group-item-text">{{ contact.name }}</div>
+    </div>
+    <div class="pull-right">
+      <img src="{{ contact.imageUrl }}" alt="{{ contact.name }}" class="img-responsive" style="max-height: 50px;">
+    </div>
+  </a>
