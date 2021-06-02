@@ -5,9 +5,7 @@
   </div>
   <div class="panel-body">
     <div class="row" *ngFor="let contact of contacts">
-      <div class="col-xs-12 panel-body">
-        <app-contact-item [contact]="contact"></app-contact-item>
-      </div>
+      <app-contact-item class="col-xs-12 panel-body" [contact]="contact"></app-contact-item>
     </div>
   </div>
 </div>
