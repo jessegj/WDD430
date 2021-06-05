@@ -1,7 +1,7 @@
 export class ContactModel{
 
   constructor(
-    public id: string,
+    public id: any,
     public name: string,
     public email: string,
     public phone: string,
