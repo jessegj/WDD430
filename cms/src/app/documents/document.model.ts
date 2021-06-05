@@ -1,6 +1,6 @@
 export class DocumentModel {
 
-  public id: string;
+  public id: any;
   public name: string;
   public description: string;
   public url: string;
