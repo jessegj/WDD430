@@ -28,8 +28,7 @@
             size="120"
             max="255"
             name="description"
-            [ngModel]=document?.description
-            required>
+            [ngModel]=document?.description>
         </div>
       </div>
 
@@ -52,7 +51,7 @@
 
       <div class="row">
         <div class="col-xs-12 btn-toolbar">
-          <button class="btn btn-success" type="submit" *ngIf="!f.valid">Save</button>
+          <button class="btn btn-success" type="submit" [disabled]="!f.valid">Save</button>
           <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
         </div>
       </div>
