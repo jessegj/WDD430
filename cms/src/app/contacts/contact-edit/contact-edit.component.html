@@ -73,7 +73,7 @@
 
           <div class="row" id="groupList"
               style="min-height: 3rem;"
-              dnd-droppable [dropZones]="['contactGroup']" (onDropSuccess)="addToGroup($event)">
+              dnd-droppable [dropZones]="['contactGroup']" (before onDropSuccess) (onDropSuccess)="addToGroup($event)">
 
             <div *ngFor="let contact of groupContacts; let i = index">
               <div class="alert alert-danger" *ngIf="!f.valid">The Name and Email fields are required</div>
@@ -82,7 +82,7 @@
                 <button class="btn btn-danger col-sm-2 deleteButton" (click)="onRemoveItem(i)">X</button>
               </div>
             </div>
-            <span class="dragMsg" *ngIf="groupContacts?.length < 1">Drag contacts in group here</span>
+            <span class="dragMsg" *ngIf="groupContacts.length < 1">Drag contacts in group here</span>
           </div>
 
         </div>
