@@ -29,7 +29,9 @@
             name="email"
             [ngModel]=contact?.email
             #email="ngModel"
-            required>
+            required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+            <div class="alert alert-danger" *ngIf="!f.valid">Enter a valid email</div>
         </div>
       </div>
 
@@ -44,8 +46,9 @@
             max="255"
             name="phone"
             [ngModel]=contact?.phone
-            #phone="ngModel">
-
+            #phone="ngModel"
+            pattern="\D*([2-9]\d{2})(\D*)([2-9]\d{2})(\D*)(\d{4})\D*">
+            <div class="alert alert-danger" *ngIf="!f.valid">Enter a valid phone number</div>
         </div>
       </div>
 
