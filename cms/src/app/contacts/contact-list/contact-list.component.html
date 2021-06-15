@@ -1,7 +1,9 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <span class="title">Contacts</span>
-    <button class="btn btn-success pull-right" [routerLink]="['new']">New Contact</button>
+    <div class="row pad-left-right">
+      <span class="pull-left title">Contacts</span>
+      <a class="btn btn-success pull-right" [routerLink]="['new']">New Contact</a>
+    </div>
   </div>
   <div class="panel-body">
     <div class="row" *ngFor="let contact of contacts">

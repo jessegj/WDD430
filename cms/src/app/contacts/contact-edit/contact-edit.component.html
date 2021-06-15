@@ -73,7 +73,7 @@
 
           <div class="row" id="groupList"
               style="min-height: 3rem;"
-              dnd-droppable [dropZones]="['contactGroup']" (before onDropSuccess) (onDropSuccess)="addToGroup($event)">
+              dnd-droppable [dropZones]="['contactGroup']" (onDropSuccess)="addToGroup($event)">
 
             <div *ngFor="let contact of groupContacts; let i = index">
               <div class="alert alert-danger" *ngIf="!f.valid">The Name and Email fields are required</div>

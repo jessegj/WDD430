@@ -53,8 +53,7 @@ export class ContactEditComponent implements OnInit {
       value.imageUrl,
       this.groupContacts
     );
-
-    if ((this.editMode = true)) {
+    if (this.editMode === true) {
       this.contactService.updateContact(this.originalContact, newContact);
     } else {
       this.contactService.addContact(newContact);

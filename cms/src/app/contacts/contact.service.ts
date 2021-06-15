@@ -11,11 +11,12 @@ export class ContactService {
   maxContactId: number;
 
   contactSelectedEvent = new EventEmitter<ContactModel>();
-  contactChangedEvent = new EventEmitter<ContactModel[]>();
+  contactChangedEvent = new Subject<ContactModel[]>();
   contactListChangedEvent = new Subject<ContactModel[]>();
 
   constructor() {
     this.contacts = MOCKCONTACTS;
+    this.maxContactId = this.getMaxId();
   }
 
   getContacts(): ContactModel[] {
