@@ -9,6 +9,7 @@ import { ContactService } from '../contact.service';
   styleUrls: ['./contact-list.component.css'],
 })
 export class ContactListComponent implements OnInit {
+  term: string;
   onSelected(contact: ContactModel) {
     this.contactService.contactSelectedEvent.emit(contact);
   }
@@ -31,5 +32,8 @@ export class ContactListComponent implements OnInit {
   }
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+  search(value: string) {
+    this.term = value;
   }
 }
