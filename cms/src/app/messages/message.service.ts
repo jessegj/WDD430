@@ -17,7 +17,7 @@ export class MessageService {
 
     this.http
       .get<Message[]>(
-        'https://jessegj-cmsproject-default-rtdb.firebaseio.com/messages.json'
+        'http://localhost:3000/messages'
       )
         //success method
 
@@ -47,9 +47,26 @@ export class MessageService {
     return null;
   }
   addMessage(message: Message) {
-    this.messages.push(message);
-    //this.messageChangedEvent.emit(this.messages.slice());
-    this.storeMessages();
+    if (!document) {
+      return;
+    }
+
+    // make sure id of the new Message is empty
+    message.id = '';
+
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+
+    // add to database
+    this.http.post<{ message: string, messages: Message }>('http://localhost:3000/messages',
+      message,
+      { headers: headers })
+      .subscribe(
+        (responseData) => {
+          // add new message to messages
+          this.messages.push(responseData.messages);
+          this.messages.sort((a, b) => (a.id < b.id ? 1 : 0));
+        }
+      );
   }
   getMaxId() {
     let maxId = 0;
