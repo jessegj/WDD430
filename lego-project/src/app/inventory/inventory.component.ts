@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Inventory } from './inventory.model';
 
 @Component({
   selector: 'app-inventory',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inventory.component.css']
 })
 export class InventoryComponent implements OnInit {
+
+  inventories: Inventory[] = [];
 
   constructor() { }
 
