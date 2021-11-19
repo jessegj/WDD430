@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h1>Lego Inventory Project</h1>
+  <h1>Project Planner</h1>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="collapse navbar-collapse">
@@ -21,15 +21,17 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <div class="row">
-            <span class="title pad-left-right col-xs-7">Add A Piece Below</span>
+            <span class="title pad-left-right col-xs-7">Add/Edit</span>
           </div>
           <!-- <div class="row"> -->
           <div class="input-group pull-left-right col-xs-7">
             <div class="pull-right pad-left-right" *ngFor="let inventory of inventories">
               <span class="title pad-left-right col-xs-7">
-                <h4>Item Number</h4><input type="text" class="form-control" placeholder="Item Number" required>
-                <h4>Size</h4><input type="text" class="form-control" placeholder="Size I.E. 2x2" required>
-                <h4>Color</h4><input type="text" class="form-control" placeholder="Color" required>
+                <h4>Name: </h4><input type="text" class="form-control" placeholder="Name" required>
+                <h4>Description: </h4><textarea rows="6" cols="50" class="form-control" placeholder="Size, color, etc." required></textarea>
+                <h4>Images: </h4> <button>Add Image</button>
+                <h4>Part Number: </h4>
+                <h4>Qty: </h4><input type="text" class="form-control" placeholder="Enter a number" required>
                 <a class="btn btn-submit">Add Piece</a>
               </span>
             </div>
