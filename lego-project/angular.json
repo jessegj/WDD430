@@ -1,5 +1,5 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "$schema": "/Users/jessegaroldjensen97/project-planner/WDD430/lego-project/node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -27,7 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
               ],
             "scripts": []
@@ -97,7 +97,11 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/popper.js/dist/popper.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           }
         }
       }
