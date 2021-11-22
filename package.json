@@ -2,5 +2,8 @@
   "dependencies": {
     "@angular/core": "^13.0.0",
     "bootstrap": "^3.4.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^13.0.3"
   }
 }
