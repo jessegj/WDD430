@@ -5,17 +5,17 @@
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li routerLinkActive="active">
-            <a class="navbar-brand" routerLink="/inventory">Item Page</a>
+            <a class="navbar-link" routerLink="/inventory">Item Page</a>
           </li>
           <li routerLinkActive="active">
-            <a class="navbar-brand" routerLink="/project-page">Project Page</a>
+            <a class="navbar-link" routerLink="/project-page">Project Page</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 </div>
-
+<button type="button" class="btn btn-danger pull-right">Delete</button> <button type="button" class="btn btn-primary pull-right">Save</button>
 <div class="panel panel-default">
     <div class="col-xs-5">
       <div class="panel panel-default">
@@ -25,16 +25,14 @@
           </div>
           <!-- <div class="row"> -->
           <div class="input-group pull-left-right col-xs-7">
-            <div class="pull-right pad-left-right" *ngFor="let inventory of inventories">
               <span class="title pad-left-right col-xs-7">
-                <h4>Name: </h4><input type="text" class="form-control" placeholder="Name" required>
-                <h4>Description: </h4><textarea rows="6" cols="50" class="form-control" placeholder="Size, color, etc." required></textarea>
-                <h4>Images: </h4> <button>Add Image</button>
-                <h4>Part Number: </h4>
-                <h4>Qty: </h4><input type="text" class="form-control" placeholder="Enter a number" required>
+                <h4>Name: </h4><input type="text" class="title" placeholder="Name" required>
+                <h4>Description: </h4><textarea rows="6" cols="50" class="title" placeholder="Size, color, etc." required></textarea>
+                <h5>Images: </h5> <button>Add Image</button>
+                <h5>Part Number: </h5>
+                <h5>Qty: </h5><input type="text" class="title" placeholder="Enter a number" required>
                 <a class="btn btn-submit">Add Piece</a>
               </span>
-            </div>
           </div>
           <div class="footer navbar-fixed-bottom">
             <h6>Jesse Jensen | BYU-Idaho 2021</h6>
