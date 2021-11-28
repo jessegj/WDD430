@@ -77,7 +77,7 @@ export class ContactService {
       contact,
       { headers: headers })
       .subscribe(
-        (responseData) => {
+        (responseData: { contact: ContactModel; }) => {
           // add new contact to contacts
           this.contacts.push(responseData.contact);
           this.contacts.sort((a, b) => (a.id < b.id ? 1 : 0));
