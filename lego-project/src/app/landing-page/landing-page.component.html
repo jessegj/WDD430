@@ -1,24 +1,28 @@
 <div class="jumbotron">
-    <h1>Project Planner</h1>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li routerLinkActive="active">
-              <a class="navbar-link" routerLink="/inventory">Item Page</a>
-            </li>
-            <li routerLinkActive="active">
-              <a class="navbar-link" routerLink="/project-page">View Projects</a>
-            </li>
-          </ul>
+  <h1>Project Planner</h1>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li routerLinkActive="active">
+            <a class="navbar-link" routerLink="/inventory">Create Project</a>
+          </li>
+          <li routerLinkActive="active">
+            <a class="navbar-link" routerLink="/project-list">View Projects</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="panel panel-default">
+  <div class="col-xs-5">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row">
+          <a routerLink="/project-page"><button class="title pad-left-right col-xs-7">Create New Project</button></a>
         </div>
       </div>
-    </nav>
+    </div>
   </div>
-  <div class="panel panel-default">
-    <div class="col-xs-5">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="row">
-            <a routerLink="/project-page"><button class="title pad-left-right col-xs-7">Create New Project</button></a>
-          </div>
+</div>

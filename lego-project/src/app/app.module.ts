@@ -7,6 +7,7 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { ProjectPageComponent } from './project-page/project-page.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ProjectListComponent } from './project-list/project-list.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +16,15 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     ProjectPageComponent,
     ItemListComponent,
     LandingPageComponent,
+    ProjectListComponent,
   ],
   imports: [
       BrowserModule,
       RouterModule.forRoot([
         {path: 'inventory', component: InventoryComponent},
         {path: 'project-page', component: ProjectPageComponent},
-        {path: 'landing-page', component: LandingPageComponent}
+        {path: 'landing-page', component: LandingPageComponent},
+        {path: 'project-list', component: ProjectListComponent}
       ]),
     ],
   providers: [],
