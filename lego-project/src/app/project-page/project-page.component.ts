@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { Subscription } from 'rxjs';
-import { InventoryComponent } from '../inventory/inventory.component';
 import { Inventory } from '../inventory/inventory.model';
 import { ProjectPage } from './project-page.model';
 import { ProjectPageService } from './project-page.service';
@@ -14,37 +13,22 @@ import { InventoryModalComponent } from '../inventory-modal/inventory-modal.comp
   styleUrls: ['./project-page.component.css']
 })
 export class ProjectPageComponent implements OnInit {
+  @Input() projectItem: ProjectPage;
+  @Output() projectItemChange: EventEmitter<Inventory> = new EventEmitter<Inventory>();
 
-  term!: string;
-  onSelected(page: ProjectPage) {
-    this.pageService.pageSelectedEvent.emit(page);
-  }
-
-  inventories: ProjectPage[] = [];
-  subscription: Subscription | any;
   constructor(private pageService: ProjectPageService, private modalService: BsModalService) {
     setTheme('bs3');
   }
 
   ngOnInit(): void {
-    this.inventories = this.pageService.getPieces();
-    this.pageService.pageChangedEvent.subscribe(
-      (inventories: ProjectPage[]) => {
-        this.inventories = inventories;
-      }
-    );
-    this.subscription = this.pageService.pageListChangedEvent.subscribe(
-      (pageList: ProjectPage[]) => {
-        this.inventories = pageList;
-      }
-    );
+    if(!this.projectItem){
+      this.projectItem = new ProjectPage();
+    }
   }
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+  formChange(): void {
+    this.projectItemChange.emit(this.projectItem);
   }
-  search(value: string) {
-    this.term = value;
-  }
+
   addItem(): void {
     let inventoryModal = this.modalService.show(InventoryModalComponent);
   }
