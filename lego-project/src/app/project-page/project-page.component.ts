@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
 import { Subscription } from 'rxjs';
+import { InventoryComponent } from '../inventory/inventory.component';
+import { Inventory } from '../inventory/inventory.model';
 import { ProjectPage } from './project-page.model';
 import { ProjectPageService } from './project-page.service';
+import { setTheme } from 'ngx-bootstrap/utils'
+import { InventoryModalComponent } from '../inventory-modal/inventory-modal.component';
 
 @Component({
   selector: 'app-project-page',
@@ -17,7 +22,9 @@ export class ProjectPageComponent implements OnInit {
 
   inventories: ProjectPage[] = [];
   subscription: Subscription | any;
-  constructor(private pageService: ProjectPageService) {}
+  constructor(private pageService: ProjectPageService, private modalService: BsModalService) {
+    setTheme('bs3');
+  }
 
   ngOnInit(): void {
     this.inventories = this.pageService.getPieces();
@@ -37,6 +44,9 @@ export class ProjectPageComponent implements OnInit {
   }
   search(value: string) {
     this.term = value;
+  }
+  addItem(): void {
+    let inventoryModal = this.modalService.show(InventoryModalComponent);
   }
 
 }

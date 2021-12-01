@@ -8,6 +8,10 @@ import { ProjectPageComponent } from './project-page/project-page.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ProjectListComponent } from './project-list/project-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { InventoryModalComponent } from './inventory-modal/inventory-modal.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,15 +21,20 @@ import { ProjectListComponent } from './project-list/project-list.component';
     ItemListComponent,
     LandingPageComponent,
     ProjectListComponent,
+    InventoryModalComponent,
   ],
   imports: [
       BrowserModule,
       RouterModule.forRoot([
-        {path: 'inventory', component: InventoryComponent},
-        {path: 'project-page', component: ProjectPageComponent},
         {path: 'landing-page', component: LandingPageComponent},
-        {path: 'project-list', component: ProjectListComponent}
+        {path: 'project-page', component: ProjectPageComponent},
+        {path: 'project-list', component: ProjectListComponent},
+        {path: 'inventory', component: InventoryComponent},
+        {path: '**', redirectTo: 'landing-page', pathMatch: 'full'}
       ]),
+      BrowserAnimationsModule,
+      ModalModule.forRoot(),
+      FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
