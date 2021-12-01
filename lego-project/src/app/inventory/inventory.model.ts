@@ -4,7 +4,9 @@ export class Inventory {
     public color?: string,
     public size?: string,
     public name?: string,
-    public id?: any,
+    public description?: string,
+    public partNumber?: string,
+    public quantity?: number,
     public group?: Inventory[] | any
   ){}
 }
