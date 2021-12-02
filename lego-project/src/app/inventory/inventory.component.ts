@@ -9,8 +9,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./inventory.component.css']
 })
 export class InventoryComponent implements OnInit {
-  @Input() inventory: Inventory;
-  @Output() inventoryChange: EventEmitter<Inventory> = new EventEmitter<Inventory>();
+@Input() inventory: Inventory;
+@Output() inventoryChange: EventEmitter<Inventory> = new EventEmitter<Inventory>();
 
 
   ngOnInit(): void {

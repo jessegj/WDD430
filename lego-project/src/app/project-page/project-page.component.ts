@@ -1,9 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { Subscription } from 'rxjs';
-import { Inventory } from '../inventory/inventory.model';
 import { ProjectPage } from './project-page.model';
-import { ProjectPageService } from './project-page.service';
 import { setTheme } from 'ngx-bootstrap/utils'
 import { InventoryModalComponent } from '../inventory-modal/inventory-modal.component';
 
@@ -14,9 +12,9 @@ import { InventoryModalComponent } from '../inventory-modal/inventory-modal.comp
 })
 export class ProjectPageComponent implements OnInit {
   @Input() projectItem: ProjectPage;
-  @Output() projectItemChange: EventEmitter<Inventory> = new EventEmitter<Inventory>();
+  @Output() projectItemChange: EventEmitter<ProjectPage> = new EventEmitter<ProjectPage>();
 
-  constructor(private pageService: ProjectPageService, private modalService: BsModalService) {
+  constructor(private modalService: BsModalService) {
     setTheme('bs3');
   }
 
@@ -24,6 +22,10 @@ export class ProjectPageComponent implements OnInit {
     if(!this.projectItem){
       this.projectItem = new ProjectPage();
     }
+  }
+  projectPageChange(projectItem: ProjectPage | any): void {
+    this.projectItem = projectItem;
+    console.log(this.projectItem);
   }
   formChange(): void {
     this.projectItemChange.emit(this.projectItem);
