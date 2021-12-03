@@ -12,6 +12,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { InventoryModalComponent } from './inventory-modal/inventory-modal.component';
 import { FormsModule } from '@angular/forms';
+import { environment } from 'src/environments/environment';
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import { FormsModule } from '@angular/forms';
       ]),
       BrowserAnimationsModule,
       ModalModule.forRoot(),
-      FormsModule
+      FormsModule,
+      provideFirebaseApp(() => initializeApp (environment.firebaseConfig)),
+      provideFirestore(() => getFirestore())
     ],
   providers: [],
   bootstrap: [AppComponent]

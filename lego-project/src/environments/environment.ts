@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: "AIzaSyCnYAAOwjN9Pl_6qlnXxtrooQUfbVw3jlw",
+    authDomain: "capstone-project-planner.firebaseapp.com",
+    projectId: "capstone-project-planner",
+    storageBucket: "capstone-project-planner.appspot.com",
+    messagingSenderId: "37894101065",
+    appId: "1:37894101065:web:4675726f33d0dabb278798"
+  }
 };
 
 /*
