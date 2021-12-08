@@ -1,5 +1,5 @@
 <div class="modal-header">Add to Inventory</div>
 <div class="modal-body">
-    <app-inventory (inventoryChange)="inventoryChange($event)"></app-inventory>
+    <app-inventory (inventoryChange)="onInventoryChange($event)"></app-inventory>
 </div>
-<div class="modal-footer"><button>Save</button><button>Cancel</button></div>
+<div class="modal-footer"><button (click)="saveButton()">Save</button><button (click)="cancelButton()">Cancel</button></div>

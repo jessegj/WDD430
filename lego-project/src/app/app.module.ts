@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
       ModalModule.forRoot(),
       FormsModule,
       provideFirebaseApp(() => initializeApp (environment.firebaseConfig)),
-      provideFirestore(() => getFirestore())
+      provideFirestore(() => getFirestore()),
+      BsDatepickerModule.forRoot()
     ],
   providers: [],
   bootstrap: [AppComponent]

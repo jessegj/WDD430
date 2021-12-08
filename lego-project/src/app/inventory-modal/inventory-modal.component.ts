@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 import { Inventory } from '../inventory/inventory.model';
 
 @Component({
@@ -7,14 +8,21 @@ import { Inventory } from '../inventory/inventory.model';
   styleUrls: ['./inventory-modal.component.css']
 })
 export class InventoryModalComponent implements OnInit {
+  @Output() inventoryChange = new EventEmitter<Inventory>();
   inventory: Inventory;
 
-  constructor() { }
+  constructor(public bsModalRef: BsModalRef) { }
 
   ngOnInit(): void {
   }
-  inventoryChange(inventory: Inventory): void {
+  onInventoryChange(inventory: Inventory): void {
     this.inventory = inventory;
-    console.log(this.inventory);
+  }
+  saveButton(){
+    this.inventoryChange.emit(this.inventory);
+    this.bsModalRef.hide();
+  }
+  cancelButton(){
+    this.bsModalRef.hide();
   }
 }
