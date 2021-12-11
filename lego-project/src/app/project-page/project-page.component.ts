@@ -43,7 +43,7 @@ export class ProjectPageComponent implements OnInit {
     if(!this.projectItem.startDate) {
       this.projectItem.startDate = new Date();
     }
-    this.dataService.saveProject(this.projectItem).subscribe( result => console.log('save data', result));
+    this.dataService.saveProject(this.projectItem);
   }
 
 }

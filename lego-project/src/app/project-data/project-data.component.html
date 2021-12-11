@@ -1,0 +1,15 @@
+<form #dataForm="ngForm">
+    <div class="form-group">
+        <label for="name">
+          <div class="card" *ngFor="let project of projects" style="width: 50rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{project.name}}</h5>
+              <p class="card-text">{{project.status}}
+              <a href="#" class="btn btn-primary">Edit</a>
+              <hr>
+            </div>
+          </div>
+        </label>
+      </div>
+</form>

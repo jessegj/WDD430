@@ -15,7 +15,10 @@ import { FormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { FirebaseTSApp } from 'firebasets/firebasetsapp/FirebaseTSApp'
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ProjectDataComponent } from './project-data/project-data.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     LandingPageComponent,
     ProjectListComponent,
     InventoryModalComponent,
+    ProjectDataComponent,
   ],
   imports: [
       BrowserModule,
@@ -37,6 +41,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
         {path: '**', redirectTo: 'landing-page', pathMatch: 'full'}
       ]),
       BrowserAnimationsModule,
+      HttpClientModule,
       ModalModule.forRoot(),
       FormsModule,
       provideFirebaseApp(() => initializeApp (environment.firebaseConfig)),
@@ -46,4 +51,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(){
+    FirebaseTSApp.init(environment.firebaseConfig)
+  }
+ }
