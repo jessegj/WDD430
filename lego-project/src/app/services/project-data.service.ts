@@ -29,15 +29,6 @@ export class ProjectDataService {
     return collectionData(projectRef, { idField: 'id' }) as Observable<ProjectPage[]>;
   }
   deleteProject(projectItem: ProjectPage) {
-    if (!projectItem) {
-      return;
-    }
-
-    const pos = this.projectItems.findIndex(p => p.id === projectItem.id);
-
-    if (pos < 0) {
-      return;
-    }
     let endPoints = "/project/:id"
     this.http.delete(this.url + endPoints).subscribe((data: any) => {
       console.log(data);
