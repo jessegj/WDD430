@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   firebaseConfig: {
     apiKey: "AIzaSyCnYAAOwjN9Pl_6qlnXxtrooQUfbVw3jlw",
+    databaseURL: "https://capstone-project-planner-default-rtdb.firebaseio.com",
     authDomain: "capstone-project-planner.firebaseapp.com",
     projectId: "capstone-project-planner",
     storageBucket: "capstone-project-planner.appspot.com",

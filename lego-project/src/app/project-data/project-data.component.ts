@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProjectPage } from '../project-page/project-page.model';
 import { ProjectDataService } from '../services/project-data.service';
@@ -9,7 +10,12 @@ import { ProjectDataService } from '../services/project-data.service';
 })
 export class ProjectDataComponent implements OnInit {
   projects:ProjectPage[] = [];
-  constructor(private dataService: ProjectDataService) { 
+  projectItem: ProjectPage;
+  router: any;
+  id: any;
+
+  constructor(private dataService: ProjectDataService) {
+    
     this.dataService.getProjects().subscribe(res => {
       console.log(res);
       this.projects = res;
@@ -17,6 +23,10 @@ export class ProjectDataComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+  onDelete() {
+      this.dataService.deleteProject(this.projectItem)
+      //this.router.navigate(['/project-list']);
   }
 
 }

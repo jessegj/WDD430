@@ -22,9 +22,6 @@ export class ProjectPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(!this.projectItem){
-      this.projectItem = new ProjectPage();
-    }
   }
   projectPageChange(projectItem: ProjectPage | any): void {
     this.projectItem = projectItem;
@@ -35,7 +32,6 @@ export class ProjectPageComponent implements OnInit {
   
     inventoryModal.content?.inventoryChange.subscribe((inventory) => {
       this.projectItem.items?.push(inventory);
-      //TODO Save inventory to database
     });
     
   }
@@ -45,5 +41,4 @@ export class ProjectPageComponent implements OnInit {
     }
     this.dataService.saveProject(this.projectItem);
   }
-
 }
