@@ -1,8 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Inventory } from './inventory.model';
-import { InventoryService } from './inventory.service';
-import { Subscription } from 'rxjs';
-
 @Component({
   selector: 'app-inventory',
   templateUrl: './inventory.component.html',

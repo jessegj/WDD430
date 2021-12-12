@@ -26,7 +26,6 @@ export class ProjectDataComponent implements OnInit {
 
   loadProjects(){
     this.dataService.getProjects().subscribe(res => {
-      console.log(res);
       this.projects = res;
     });
   }

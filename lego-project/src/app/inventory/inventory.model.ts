@@ -7,6 +7,7 @@ export class Inventory {
     public description?: string,
     public partNumber?: string,
     public quantity?: number,
+    public id?: string, 
     public group?: Inventory[] | any
   ){}
 }

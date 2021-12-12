@@ -14,9 +14,7 @@ export class ProjectDataService {
   httpClient: any;
   projectItems: ProjectPage[];
 
-  constructor(private firestore: Firestore, private http: HttpClient) {
-    this.url = "https://capstone-project-planner-default-rtdb.firebaseio.com"
-  }
+  constructor(private firestore: Firestore, private http: HttpClient) { }
 
   saveProject(projectItem: ProjectPage): Observable<any> {
     if(projectItem.id && projectItem.id.length > 0)

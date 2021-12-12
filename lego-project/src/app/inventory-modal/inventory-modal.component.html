@@ -1,5 +1,9 @@
 <div class="modal-header">Add to Inventory</div>
 <div class="modal-body">
-    <app-inventory (inventoryChange)="onInventoryChange($event)"></app-inventory>
+  <app-inventory (inventoryChange)="onInventoryChange($event)" [inventory]="inventory"></app-inventory>
 </div>
-<div class="modal-footer"><button (click)="saveButton()">Save</button><button (click)="cancelButton()">Cancel</button></div>
+<div class="modal-footer">
+  <button type="button" (click)="saveButton()" class="btn-primary">Save</button>
+  <button type="button" (click)="cancelButton()">Cancel</button>
+  <button type="button" (click)="deleteButton()" *ngIf="inventory.id" class="btn-danger">Delete</button>
+</div>
