@@ -6,7 +6,7 @@
             <div class="card-body">
               <h5 class="card-title">Project Name: {{project.name}}</h5>
               <p class="card-text">Status: {{project.status}}<br><br>
-              <a href="#" class="btn btn-primary">Edit</a><a (click)="onDelete()"class="btn btn-danger">Delete</a>
+                <a routerLink="/project-page/{{project.id}}" style="margin-right:5px;" class="btn btn-primary">Edit</a><a (click)="onDelete()"class="btn btn-danger">Delete</a>
               <hr>
             </div>
           </div>

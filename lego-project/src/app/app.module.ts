@@ -35,10 +35,10 @@ import { HttpClientModule } from '@angular/common/http';
       BrowserModule,
       RouterModule.forRoot([
         {path: 'landing-page', component: LandingPageComponent},
-        {path: 'project-page', component: ProjectPageComponent},
+        {path: 'project-page/:id', component: ProjectPageComponent},
         {path: 'project-list', component: ProjectListComponent},
         {path: 'inventory', component: InventoryComponent},
-        {path: '**', redirectTo: 'landing-page', pathMatch: 'full'}
+        {path: '**', redirectTo: 'project-list', pathMatch: 'full'}
       ]),
       BrowserAnimationsModule,
       HttpClientModule,

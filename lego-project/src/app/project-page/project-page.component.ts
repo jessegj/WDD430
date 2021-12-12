@@ -5,6 +5,8 @@ import { ProjectPage } from './project-page.model';
 import { setTheme } from 'ngx-bootstrap/utils'
 import { InventoryModalComponent } from '../inventory-modal/inventory-modal.component';
 import { ProjectDataService } from '../services/project-data.service';
+import { ActivatedRoute } from '@angular/router';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-project-page',
@@ -16,12 +18,20 @@ export class ProjectPageComponent implements OnInit {
   //@Output() projectItemChange: EventEmitter<ProjectPage> = new EventEmitter<ProjectPage>();
   @Input() projectItem: ProjectPage;
   
-  constructor(private modalService: BsModalService, private dataService: ProjectDataService) {
+  constructor(private modalService: BsModalService, private dataService: ProjectDataService, private route: ActivatedRoute) {
     setTheme('bs3');
     this.projectItem = {items: []};
   }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      console.log(params);
+      if(params.id && params.id.length > 0) {
+        this.dataService.getProject(params.id).subscribe(res => {
+          this.projectItem = res;
+        })
+      }
+    });
   }
   projectPageChange(projectItem: ProjectPage | any): void {
     this.projectItem = projectItem;
