@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { Firestore, collectionData, collection,doc, docData, updateDoc } from '@angular/fire/firestore';
+import { Firestore, collectionData, collection,doc, docData, updateDoc, deleteDoc } from '@angular/fire/firestore';
 import { addDoc} from '@firebase/firestore';
 import { from, Observable, Subject } from 'rxjs';
 import { ProjectPage } from '../project-page/project-page.model';
@@ -41,10 +41,8 @@ export class ProjectDataService {
     return docData(projectRef, { idField: 'id' }) as Observable<ProjectPage>;
   }
 
-  deleteProject(projectItem: ProjectPage) {
-    let endPoints = "/project/:id"
-    this.http.delete(this.url + endPoints).subscribe((data: any) => {
-      console.log(data);
-    });
+  deleteProject(id:string): Observable<any>{
+    const projectDocRef = doc(this.firestore, `project/${id}`);
+    return from(deleteDoc(projectDocRef));
   };
 }

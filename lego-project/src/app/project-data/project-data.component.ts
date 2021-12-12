@@ -10,23 +10,25 @@ import { ProjectDataService } from '../services/project-data.service';
 })
 export class ProjectDataComponent implements OnInit {
   projects:ProjectPage[] = [];
-  projectItem: ProjectPage;
-  router: any;
-  id: any;
 
   constructor(private dataService: ProjectDataService) {
-    
-    this.dataService.getProjects().subscribe(res => {
-      console.log(res);
-      this.projects = res;
-    })
+    this.loadProjects();
   }
 
   ngOnInit(): void {
   }
-  onDelete() {
-      this.dataService.deleteProject(this.projectItem)
-      //this.router.navigate(['/project-list']);
+
+  onDelete(id: string) {
+      this.dataService.deleteProject(id).subscribe(res => {
+        this.loadProjects();
+      });
+  }
+
+  loadProjects(){
+    this.dataService.getProjects().subscribe(res => {
+      console.log(res);
+      this.projects = res;
+    });
   }
 
 }

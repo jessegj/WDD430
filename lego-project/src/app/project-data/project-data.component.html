@@ -1,15 +1,16 @@
 <form #dataForm="ngForm">
-    <div class="form-group">
-        <label for="name">
-          <div class="card" *ngFor="let project of projects" style="width: 50rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Project Name: {{project.name}}</h5>
-              <p class="card-text">Status: {{project.status}}<br><br>
-                <a routerLink="/project-page/{{project.id}}" style="margin-right:5px;" class="btn btn-primary">Edit</a><a (click)="onDelete()"class="btn btn-danger">Delete</a>
-              <hr>
-            </div>
+  <div class="form-group">
+      <label for="name">
+        <div class="card" *ngFor="let project of projects" style="width: 50rem;">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Project Name: {{project.name}}</h5>
+            <p class="card-text">Status: {{project.status}}</p><br><br>
+            <a routerLink="/project-page/{{project.id}}" style="margin-right:5px;" class="btn btn-primary">Edit</a>
+            <a (click)="onDelete(project.id)"class="btn btn-danger">Delete</a>
+            <hr>
           </div>
-        </label>
-      </div>
+        </div>
+      </label>
+    </div>
 </form>
