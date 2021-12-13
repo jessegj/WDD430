@@ -39,7 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
         {path: 'project-page/:id', component: ProjectPageComponent},
         {path: 'project-list', component: ProjectListComponent},
         {path: 'inventory', component: InventoryComponent},
-        {path: '**', redirectTo: 'project-list', pathMatch: 'full'}
+        {path: '**', redirectTo: 'project-page', pathMatch: 'full'}
       ]),
       BrowserAnimationsModule,
       HttpClientModule,
